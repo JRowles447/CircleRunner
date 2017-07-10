@@ -8,6 +8,10 @@ def run_game():
     x = 380
     y = 280
 
+    #Font rendering
+    myfont = pygame.font.SysFont('Comic Sans MS', 45)
+
+
     clock = pygame.time.Clock()
 
     while not done:
@@ -32,6 +36,8 @@ def run_game():
 
         if x >= 760 or y >= 560 or x <= 40 or y <=40:
             screen.fill((255, 255, 255))
+            textSurface = myfont.render('Game Over', False, (0, 0, 0))
+            screen.blit(textSurface, (310,250))
 
         pygame.display.flip()
         clock.tick(60)
