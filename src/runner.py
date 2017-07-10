@@ -29,8 +29,6 @@ def run_game():
         pressed = pygame.key.get_pressed()
         if pressed[pygame.K_UP] and y > 0: y -= 4
         if pressed[pygame.K_DOWN] and y < 560: y += 4
-        # if pressed[pygame.K_LEFT]: x -= 3
-        # if pressed[pygame.K_RIGHT]: x += 3
 
         screen.fill(BLACK)
 
