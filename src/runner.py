@@ -2,14 +2,19 @@ import pygame
 
 def run_game():
     pygame.init()
+    BLACK = (0, 0, 0)
+    WHITE = (255, 255, 255)
+    RED = (255, 0, 0)
+    BLUE = (0, 0, 255)
+
     screen = pygame.display.set_mode((800, 600))
     done = False
     is_blue = True
-    x = 380
+    x = 20
     y = 280
 
-    #Font rendering
-    myfont = pygame.font.SysFont('Comic Sans MS', 45)
+    #Font object for game over
+    myfont = pygame.font.SysFont('Trebuchet', 70)
 
 
     clock = pygame.time.Clock()
@@ -24,20 +29,18 @@ def run_game():
         pressed = pygame.key.get_pressed()
         if pressed[pygame.K_UP]: y -= 3
         if pressed[pygame.K_DOWN]: y += 3
-        if pressed[pygame.K_LEFT]: x -= 3
-        if pressed[pygame.K_RIGHT]: x += 3
+        # if pressed[pygame.K_LEFT]: x -= 3
+        # if pressed[pygame.K_RIGHT]: x += 3
 
-        screen.fill((0, 0, 0))
-        if is_blue:
-            color = (0, 0, 255)
-        else:
-            color = (255, 0, 0)
-        pygame.draw.circle(screen, color, (x,y), 40)
+        screen.fill(BLACK)
 
-        if x >= 760 or y >= 560 or x <= 40 or y <=40:
-            screen.fill((255, 255, 255))
-            textSurface = myfont.render('Game Over', False, (0, 0, 0))
-            screen.blit(textSurface, (310,250))
+        pygame.draw.rect(screen, BLUE, (x, y, 40, 40))
+
+        #Check if the player goes off the screen
+        # if x >= 760 or y >= 560 or x <= 40 or y <=40:
+        #     screen.fill(WHITE)
+        #     textSurface = myfont.render('Game Over', False, RED)
+        #     screen.blit(textSurface, (310,250))
 
         pygame.display.flip()
         clock.tick(60)
