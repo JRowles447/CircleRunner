@@ -27,8 +27,8 @@ def run_game():
                 is_blue = not is_blue
 
         pressed = pygame.key.get_pressed()
-        if pressed[pygame.K_UP]: y -= 3
-        if pressed[pygame.K_DOWN]: y += 3
+        if pressed[pygame.K_UP] and y > 0: y -= 4
+        if pressed[pygame.K_DOWN] and y < 560: y += 4
         # if pressed[pygame.K_LEFT]: x -= 3
         # if pressed[pygame.K_RIGHT]: x += 3
 
