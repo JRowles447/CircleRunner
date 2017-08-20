@@ -7,6 +7,16 @@ def run_game():
     RED = (255, 0, 0)
     BLUE = (0, 0, 255)
 
+
+    print(pygame.joystick.get_init())
+    print(pygame.joystick.get_count())
+
+    cont = pygame.joystick.Joystick(1)
+    cont.init()
+    print(cont.get_name())
+    print(cont.get_numbuttons())
+    print(cont.get_numballs())
+
     screen = pygame.display.set_mode((800, 600))
     done = False
     is_blue = True
@@ -27,6 +37,40 @@ def run_game():
                 is_blue = not is_blue
 
         pressed = pygame.key.get_pressed()
+        if cont.get_button(1):
+            print("button 1 was pressed")
+        if cont.get_button(2):
+            print("button 2 was pressed")
+        if cont.get_button(3):
+            print("button 3 was pressed")
+        if cont.get_button(4):
+            print("button 4 was pressed")
+        if cont.get_button(5):
+            print("button 5 was pressed")
+        if cont.get_button(6):
+            print("button 6 was pressed")
+        if cont.get_button(7):
+            print("button 7 was pressed")
+        if cont.get_button(8):
+            print("button 8 was pressed")
+        if cont.get_button(9):
+            print("button 9 was pressed")
+        if cont.get_button(10):
+            print("button 10 was pressed")
+        if cont.get_button(11):
+            print("button 11 was pressed")
+        if cont.get_button(12):
+            print("button 12 was pressed")
+        if cont.get_button(13):
+            print("button 13 was pressed")
+        if cont.get_button(14):
+            print("button 14 was pressed")
+        if cont.get_button(15):
+            print("button 15 was pressed")
+        if cont.get_button(0):
+            print("button 0 was pressed")
+
+
         if pressed[pygame.K_UP] and y > 0: y -= 4
         if pressed[pygame.K_DOWN] and y < 560: y += 4
 
