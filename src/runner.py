@@ -35,7 +35,8 @@ def run_game():
                 done = True
             if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
                 is_blue = not is_blue
-
+            if event.type == pygame.JOYBUTTONDOWN:
+                print("done")
         pressed = pygame.key.get_pressed()
         if cont.get_button(1):
             print("button 1 was pressed")
